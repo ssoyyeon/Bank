@@ -63,8 +63,10 @@ class Bank_v2 {
 
 	int menu() {
 		////// 변수
-		int num = 0; // 스캐너에서 입력 받을 번호
-		Scanner scanner = new Scanner(System.in); // 클래스 받는 생성자 생성
+		// 스캐너에서 입력 받을 번호
+		int num = 0; 
+		Scanner scanner = new Scanner(System.in); 
+		// 클래스 받는 생성자 생성
 		Bank_v2 user1 = new Bank_v2();
 
 		do {

@@ -7,7 +7,6 @@
 
 package MINIPROJECT;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BANK_MINI006 {

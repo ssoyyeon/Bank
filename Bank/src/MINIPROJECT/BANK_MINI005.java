@@ -7,7 +7,6 @@
 
 package MINIPROJECT;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BANK_MINI005 {
@@ -34,7 +33,7 @@ public class BANK_MINI005 {
 				if (cnt > 3) {
 					System.out.println("더이상 신규가입이 불가합니다.\n");
 				} else {
-				////// 입력	
+					////// 입력
 					// 아이디 입력
 					System.out.print("ㅁ 아이디 : ");
 					id[i] = scanner.next();
@@ -45,57 +44,56 @@ public class BANK_MINI005 {
 					System.out.println("설정되어 있습니다.");
 					i++;
 				}
-				
-			// 조회하기
+
+				// 조회하기
 			} else if (num == 2) {
-			////// 변수	
+				////// 변수
 				boolean flag = false;
-				int k = -1;			
-			
-			////// 입력	
+				int k = -1;
+
+				////// 입력
 				// 본인확인
 				System.out.println("ㅁ 조회기능입니다");
 				System.out.print("본인확인ID : ");
 				tempId = scanner.next();
 				System.out.print("본인확인pass : ");
 				tempPass = scanner.next();
-			
-			////// 처리
+
+				////// 처리
 				// 사용자 추가 유무 확인
 				for (int j = 0; j < i; j++) {
 					if (tempId.equals(id[j]) && tempPass.equals(pass[j])) {
 						// 사용자의 아이디 번호를 찾는다.
 						k = j;
-						
-			////// 출력	
-							System.out.println("**************************");
-							System.out.println("반갑습니다 고객님~^^");
-							System.out.println("아이디 : " + id[k]);
-							System.out.println("비밀번호 : " + pass[k]);
-							System.out.println("잔액: " + balance[k]);
+
+						////// 출력
+						System.out.println("**************************");
+						System.out.println("반갑습니다 고객님~^^");
+						System.out.println("아이디 : " + id[k]);
+						System.out.println("비밀번호 : " + pass[k]);
+						System.out.println("잔액: " + balance[k]);
 						flag = true;
 						break;
-					} 
+					}
 				}
-				if (flag == false) { // 아이디와 비밀번호가 다를 때 
+				if (flag == false) { // 아이디와 비밀번호가 다를 때
 					System.out.println("다시 확인해 주세요.\n");
 					continue;
 				}
-		
 
-			// 입금하기	
+				// 입금하기
 			} else if (num == 3) {
-			/////// 변수
-				boolean	flag = false;
-				
-			//////// 입력
+				/////// 변수
+				boolean flag = false;
+
+				//////// 입력
 				// 본인확인
 				System.out.println("□ 입금기능 입니다.");
 				System.out.print("본인확인ID : ");
 				tempId = scanner.next();
 				System.out.print("본인확인pass : ");
 				tempPass = scanner.next();
-			
+
 				////// 처리
 				for (int j = 0; j < i; j++) {
 					if (tempId.equals(id[j]) && tempPass.equals(pass[j])) {
@@ -103,8 +101,8 @@ public class BANK_MINI005 {
 						deposit = scanner.nextInt();
 						balance[j] += deposit;
 						flag = true;
-						
-				/////// 출력		
+
+						/////// 출력
 						System.out.println("**************************");
 						System.out.println("잔액확인");
 						System.out.println("ID : " + id[j]);
@@ -112,25 +110,25 @@ public class BANK_MINI005 {
 						System.out.println("balance: " + balance[j] + "\n");
 						break;
 					}
-				} // 아이디와 비밀번호가 다를 때 
+				} // 아이디와 비밀번호가 다를 때
 				if (flag == false) {
 					System.out.println("다시 확인해 주세요.\n");
 					continue;
 				}
-				
-			// 출금하기 
+
+				// 출금하기
 			} else if (num == 4) {
-			////// 변수
-				boolean	flag = false;
-				
-			////// 입력	
+				////// 변수
+				boolean flag = false;
+
+				////// 입력
 				System.out.println("□ 출금기능 입니다");
 				System.out.print("본인확인ID : ");
 				tempId = scanner.next();
 				System.out.print("본인확인pass : ");
 				tempPass = scanner.next();
-		
-			////// 처리 
+
+				////// 처리
 				for (int j = 0; j < i; j++) {
 					if (id[j].equals(tempId) && pass[j].equals(tempPass)) {
 						flag = true;
@@ -139,7 +137,7 @@ public class BANK_MINI005 {
 						withdraw = scanner.nextInt();
 						if (balance[j] >= withdraw) {
 							balance[j] -= withdraw;
-		   ////// 출력
+							////// 출력
 							System.out.println("**************************");
 							System.out.println("잔액확인");
 							System.out.println("ID : " + id[j]);
@@ -150,33 +148,33 @@ public class BANK_MINI005 {
 						}
 						break;
 					}
-				} // 아이디와 비밀번호가 다를 때 
+				} // 아이디와 비밀번호가 다를 때
 				if (flag == false) {
 					System.out.println("다시 확인해 주세요.\n");
-				continue;
+					continue;
 				}
-				
-			// 삭제하기
+
+				// 삭제하기
 			} else if (num == 5) {
-			////// 변수
-			boolean	flag = false;
-			
-			////// 입력
+				////// 변수
+				boolean flag = false;
+
+				////// 입력
 				System.out.println("□ 삭제기능 입니다.");
 				System.out.print("본인확인ID : ");
 				tempId = scanner.next();
 				System.out.print("본인확인pass : ");
 				tempPass = scanner.next();
-				
-			////// 처리
+
+				////// 처리
 				for (int j = 0; j < i; j++) {
 					if (id[j].equals(tempId) && pass[j].equals(tempPass)) {
 						// 사용자 정보 초기화
 						id[j] = "0";
 						pass[j] = "0";
 						balance[j] = 0;
-						
-			////// 출력
+
+						////// 출력
 						System.out.println("**************************");
 						System.out.println("잔액확인");
 						System.out.println("ID : " + id[j]);
@@ -186,18 +184,18 @@ public class BANK_MINI005 {
 						cnt--;
 						break;
 					}
-				} // 아이디와 비밀번호가 다를 때 
+				} // 아이디와 비밀번호가 다를 때
 				if (flag == false) {
 					System.out.println("다시 확인해 주세요.");
 					continue;
 				}
-				
-			// 종료하기	
+
+				// 종료하기
 			} else if (num == 9) {
 				System.out.println("□ 종료기능입니다");
 				break;
-				
-			// 메뉴 이외의 번호를 입력했을 때
+
+				// 메뉴 이외의 번호를 입력했을 때
 			} else
 				System.out.println("숫자를 다시 입력해주세요.");
 			System.out.println();
